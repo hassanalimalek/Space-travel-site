@@ -506,6 +506,7 @@ nav {
   display: grid;
   place-items: center;
   padding-inline: 1rem;
+  height: 100%;
 }
 .grid-container p:not([class]) {
   max-width: 50ch;
@@ -514,7 +515,7 @@ nav {
 /* destination layout */
 
 .grid-container--destination {
-  --flow-space: 2rem;
+  --flow-space: 1.5rem;
   grid-template-areas:
     'title'
     'image'
@@ -525,6 +526,7 @@ nav {
 .grid-container--destination > img {
   grid-area: image;
   max-width: 60%;
+  align-self: start;
 }
 
 .grid-container--destination > .tab-list {
@@ -628,6 +630,7 @@ nav {
     min-height: 100%;
     padding-bottom: max(6rem, 5vh);
     align-items: end;
+    border: 1px solid red;
   }
 
   /* destination */
@@ -652,6 +655,10 @@ nav {
 
   /* crew */
   .grid-container--crew {
+    grid-template-columns: minmax(1rem, 1fr) minmax(0, 35rem) minmax(0, 25rem) minmax(
+        1rem,
+        1fr
+      );
     grid-template-areas:
       '. title title .'
       '. content image .'
@@ -661,6 +668,7 @@ nav {
     justify-self: start;
   }
   .grid-container--crew .crew-info {
+    justify-self: flex-start;
     margin-top: 2rem;
   }
   .grid-container--crew img {
@@ -679,10 +687,6 @@ body {
   background-position: bottom center;
 }
 
-body {
-  background-size: cover;
-  background-position: bottom center;
-}
 /* home */
 .home {
   background-image: url(./assets/home/background-home-mobile.jpg);
