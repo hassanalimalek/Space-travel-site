@@ -24,6 +24,7 @@ tabList.addEventListener('click',(e)=>{
     const targetTab = e.target;
     const targetPanel = targetTab.getAttribute("aria-controls");
     const targetImage = targetTab.getAttribute("data-image");
+    console.log("targetImage --->",targetImage)
     const tabContainer = targetTab.parentNode;
     const mainContainer = tabContainer.parentNode;
 
@@ -37,7 +38,7 @@ tabList.addEventListener('click',(e)=>{
     mainContainer
         .querySelectorAll('[role=tabpanel]')
         .forEach((panel) => panel.setAttribute("hidden", true));
-    // Showing target image
+    // Showing target article
     mainContainer.querySelector([`#${targetPanel}`]).removeAttribute('hidden');
 
     // Hiding all images
